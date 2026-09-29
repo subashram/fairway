@@ -10,6 +10,66 @@ workflow engine, CI runner, issue tracker replacement, LLM provider
 abstraction, credential store, or provider-cost gate. Release and adapter work
 must preserve the rules in [Product boundaries](design/product-boundaries.md).
 
+## v0.3.1
+
+`v0.3.1` adds a governed learned-context lifecycle without making provider
+chat, generated prose, or a vector index authoritative. A completed task can
+produce a bounded lesson proposal from cited Fairway decisions, evidence,
+reviews, outcomes, and commit associations. Preview is the default. Applying a
+proposal creates a normal Markdown diff that still requires the project's
+ordinary Git and review process.
+
+Knowledge retrieval remains useful without an embedding model. Deterministic
+lexical selection is always available; an optional local adapter can build a
+disposable semantic index and add hybrid ranking. The index records page and
+model identity, reports stale or incompatible state, and falls back to lexical
+retrieval when unavailable or invalid. Deleting it loses no reviewed knowledge.
+
+Portable export includes reviewed Markdown, the source manifest, checksums, and
+optionally the derived index. Import validates bounded paths, sizes, checksums,
+metadata, and citations before proposing an isolated namespace. External
+ownership, verification, authority, and promotion fields are stripped, and
+imported pages remain untrusted drafts until the receiving project revalidates
+them.
+
+Cold-start composition can derive knowledge terms from the selected task and
+track. Current execution memory renders first under its existing budget;
+learned context has a separate budget and cannot displace task state, blockers,
+stop conditions, freshness, authority labels, or source provenance.
+
+A bounded AI Cloud consumer pilot compared lexical and hybrid retrieval,
+measured packet size and rebuild cost, exercised missing-index fallback, and
+audited authority choices. It found no incorrect authority transition in its
+small calibrated sample, but one pre-calibration relevance false positive and a
+missed stale lesson. The pilot therefore does not justify automatic capture or
+default semantic indexing.
+
+### Upgrade
+
+1. Back up the project Fairway database and Git-managed knowledge files.
+2. Install `v0.3.1`.
+3. Run `fairway config validate` and `fairway reconcile active --dry-run`.
+4. Run `fairway knowledge status` before capture or indexing and resolve stale
+   source findings through normal documentation review.
+5. Preview `fairway knowledge capture` and `fairway knowledge import` before
+   using `--apply`.
+6. Treat any semantic index as local disposable cache data and keep the
+   embedding adapter explicitly configured and bounded.
+
+### Known Limits
+
+- Fairway does not automatically capture lessons, verify generated
+  interpretation, approve architecture, or promote derived knowledge.
+- Semantic retrieval is optional and model-specific. Similarity does not change
+  page authority, freshness, or verification state.
+- Imported bundles are not trusted provenance. Receiving projects must verify
+  their source facts and review any proposed Markdown before promotion.
+- The AI Cloud pilot is a small retrieval and authority-boundary qualification,
+  not a benchmark, general accuracy claim, or proof of delivery improvement.
+- This release does not claim sovereign deployment readiness, regulatory
+  certification, independent security assessment, or a complete AI Quality
+  System.
+
 ## v0.3.0
 
 `v0.3.0` makes Fairway a durable engineering control and evidence plane across

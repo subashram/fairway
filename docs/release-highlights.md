@@ -1,7 +1,6 @@
-- Preserve versioned run, observation, and evaluator-result records across
-  replaceable agent harnesses without storing prompts or transcripts.
-- Inspect verified outcome efficiency and cited trajectory findings while
-  keeping every redirect, review, and promotion decision explicitly human- or
-  system-owned.
-- Start from a documented GPUaaS pilot and provider-neutral adapter contract
-  instead of coupling Fairway to one model, agent, or execution runtime.
+- Capture reusable task lessons from cited Fairway facts as reviewable Markdown,
+  without retaining provider prompts, transcripts, reasoning, or tool bodies.
+- Query learned context with deterministic lexical retrieval or an optional
+  disposable local semantic index that can never upgrade knowledge authority.
+- Export, validate, and import bounded knowledge bundles while treating every
+  external page as an untrusted draft until the receiving project reviews it.

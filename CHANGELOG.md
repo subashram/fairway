@@ -7,6 +7,40 @@ and uses semantic versioning.
 
 ## Unreleased
 
+## v0.3.1 - 2026-09-29
+
+### Added
+
+- `fairway knowledge capture` proposes a short task-scoped lesson from cited
+  decisions, evidence, reviews, outcomes, and commit associations; preview is
+  the default and apply produces a normal Git-reviewed Markdown change.
+- Optional local semantic indexing and hybrid knowledge query improve recall
+  while retaining deterministic lexical fallback and reviewed Markdown as the
+  authoritative knowledge source.
+- Portable knowledge export/import validates paths, sizes, checksums, metadata,
+  and citations; imported pages enter an isolated namespace as untrusted drafts.
+- Cold-start packets can select bounded learned context without displacing
+  current task state, blockers, stop conditions, authority labels, freshness,
+  or provenance.
+
+### Changed
+
+- Semantic-only query admission now uses an explicit configurable threshold and
+  reports stale, incompatible, missing, or failed index state before falling
+  back to lexical retrieval.
+- Engineering-knowledge guidance distinguishes governed reusable lessons from
+  provider transcripts, working memory, canonical documentation, and execution
+  authority.
+
+### Security
+
+- Capture excludes raw prompts, reasoning, transcripts, tool bodies, generated
+  content dumps, and sensitive free-form record bodies.
+- Semantic and bundle file access is descriptor-bound and rejects symlink,
+  traversal, duplicate, oversized, structurally invalid, or checksum-mismatched
+  content. Imported authority, ownership, verification, and promotion fields
+  are removed rather than trusted.
+
 ## v0.3.0 - 2026-08-22
 
 ### Added

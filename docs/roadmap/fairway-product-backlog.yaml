@@ -6961,3 +6961,22 @@ tasks:
       - "Cold-start packets can select relevant learned context without displacing task state, blockers, stop conditions, authority labels, freshness, or source provenance."
       - "Portable export emits reviewed Markdown, a manifest, checksums, and an optional derived index; import is preview-first and treats external fields as untrusted non-authoritative input."
       - "A GPUaaS pilot measures retrieval relevance, missed lessons, context bytes, stale findings, maintenance cost, and incorrect authority choices before broader automation."
+
+  - id: FW-416
+    title: Qualify and publish Fairway v0.3.1 learned-context release
+    kind: task
+    role: ops
+    profile: fairway-adoption
+    owning_domain: fairway
+    owning_layer: release
+    source_paths: [CHANGELOG.md, docs/release-notes.md, docs/release-highlights.md, docs/assessment, docs/roadmap/fairway-product-backlog.yaml, internal/knowledge, cmd/fairway]
+    target_paths: [CHANGELOG.md, docs/release-notes.md, docs/release-highlights.md, docs/assessment, docs/roadmap/fairway-product-backlog.yaml]
+    review_domains: [arch, governance, ops, security]
+    tags: [release, supply-chain, learned-context]
+    risk_level: critical
+    migration_type: qualified-release
+    dependencies: [FW-415]
+    acceptance_checks:
+      - "Release metadata accurately describes the learned-context lifecycle, privacy controls, authority boundaries, upgrade behavior, and known limits."
+      - "Exact pushed source passes full validation, CI, Docs Portal, production rehearsal, signing, notarization, assurance, and immutable promotion."
+      - "GitHub release v0.3.1 is public, release assets return 200, Homebrew reports 0.3.1, brew fetch succeeds, and the installed binary reports 0.3.1."
